@@ -1,4 +1,4 @@
-package repository_tests
+package repository
 
 import (
 	"generics/examples/repository/generics"
