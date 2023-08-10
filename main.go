@@ -2,18 +2,21 @@ package main
 
 import (
 	"fmt"
-	"generics/examples/repository/generics"
+	index "generics/examples/find_index/generics"
+	repo "generics/examples/repository/generics"
 	_interface "generics/examples/repository/interface"
 	"generics/examples/repository/simple"
+	slice "generics/examples/slice_bytes/generics"
+	uniq "generics/examples/uniq_element/generics"
 )
 
 func main() {
 	//		---- generics ----
-	products := generics.NewRepository[generics.Product]()
-	users := generics.NewRepository[generics.User]()
+	products := repo.NewRepository[repo.Product]()
+	users := repo.NewRepository[repo.User]()
 
-	p := generics.Product{ID: 1, Name: "iPhone", Price: 999.99}
-	u := generics.User{ID: 1, Name: "Hasan", Age: 18}
+	p := repo.Product{ID: 1, Name: "iPhone", Price: 999.99}
+	u := repo.User{ID: 1, Name: "Hasan", Age: 18}
 	fmt.Print(p, u)
 
 	products.Save(p.ID, p)
@@ -46,4 +49,24 @@ func main() {
 	if savedUser, ok := repo.Entities[user.ID].(*_interface.User); ok {
 		fmt.Printf("Saved user: %+v\n", savedUser)
 	}
+
+	//     ---- uniq ----
+
+	fmt.Println(uniq.UniqueElements([]int{4, 3, 2, 3, 1, 5, 1}))
+	fmt.Println(uniq.UniqueElements([]string{"apple", "banana", "apple", "potato"}))
+
+	//     ---- slice bytes ----
+
+	buf := slice.AppendStringOrBytes([]byte{}, "foo")
+	buf = slice.AppendStringOrBytes(buf, []byte("bar"))
+
+	fmt.Println(string(buf)) // prints: foobar
+
+	//     ---- find index ----
+
+	numbers := []int{5, 3, 2, 8, 7}
+	fmt.Println(index.FindIndex(numbers, 8)) // prints: 3
+
+	usr := index.Users{1, 2, 3}
+	fmt.Println(index.FindIndex(usr, 2)) // prints: 1
 }

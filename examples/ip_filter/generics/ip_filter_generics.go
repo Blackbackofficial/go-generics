@@ -122,11 +122,9 @@ func (f *IPFilter[T]) prefixToMaskV6(prefix int) ([]byte, error) {
 		if prefix >= 8 {
 			maskBytes[i] = 0xFF
 			prefix -= 8
-		} else if prefix > 0 {
-			maskBytes[i] = maskValue
-			prefix = 0
 		} else {
-			maskBytes[i] = 0
+			maskBytes[i] = maskValue
+			break
 		}
 	}
 
