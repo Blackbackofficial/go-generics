@@ -1,8 +1,8 @@
 package ip_filter
 
 import (
-	"generics/examples/ip_filter"
-	_interface "generics/examples/ip_filter/interface"
+	"generics/examples/easy/ip_filter"
+	"generics/examples/easy/ip_filter/interface"
 	"testing"
 )
 

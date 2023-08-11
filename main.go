@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	index "generics/examples/find_index/generics"
-	repo "generics/examples/repository/generics"
-	_interface "generics/examples/repository/interface"
-	"generics/examples/repository/simple"
-	slice "generics/examples/slice_bytes/generics"
-	uniq "generics/examples/uniq_element/generics"
+	index "generics/examples/easy/find_index/generics"
+	repo "generics/examples/easy/repository/generics"
+	"generics/examples/easy/repository/interface"
+	"generics/examples/easy/repository/simple"
+	slice "generics/examples/easy/slice_bytes/generics"
+	uniq "generics/examples/easy/uniq_element/generics"
 )
 
 func main() {

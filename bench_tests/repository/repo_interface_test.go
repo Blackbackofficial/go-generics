@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"generics/examples/repository/interface"
+	"generics/examples/easy/repository/interface"
 	"testing"
 )
 

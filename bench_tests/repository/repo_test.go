@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"generics/examples/repository/simple"
+	"generics/examples/easy/repository/simple"
 	"testing"
 )
 

@@ -1,5 +1,7 @@
 package generics
 
+import "cmp"
+
 // UniqueElements returns a new slice containing the unique elements of a
 func UniqueElements[T comparable](a []T) []T {
 	uniq := make([]T, 0)
@@ -11,4 +13,8 @@ func UniqueElements[T comparable](a []T) []T {
 		}
 	}
 	return uniq
+}
+
+func Equal[T cmp.Ordered](a, b T) bool {
+	return a == b
 }

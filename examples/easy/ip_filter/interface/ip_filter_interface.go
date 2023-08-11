@@ -3,7 +3,7 @@ package _interface
 import (
 	"encoding/hex"
 	"fmt"
-	"generics/examples/ip_filter"
+	"generics/examples/easy/ip_filter"
 	"net/netip"
 )
 
@@ -57,14 +57,6 @@ func NewIPFilterProcessor(rows []IpFilterRow, gm *ip_filter.Geomap, version int)
 		gm:       gm,
 		ipsCount: 0,
 	}
-}
-
-func (f *IPFilter) GetBytes() []byte {
-	return f.buffer
-}
-
-func (f *IPFilter) GetIPCount() uint32 {
-	return uint32(f.ipsCount)
 }
 
 func (f *IPFilter) inetNtoA(ip interface{}) ([]byte, error) {
